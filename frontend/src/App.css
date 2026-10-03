@@ -1,0 +1,473 @@
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(251, 146, 60, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.12), transparent 28%),
+    linear-gradient(135deg, #1c120b 0%, #241a14 42%, #17120e 100%);
+  color: #fef3c7;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.85rem 2.4rem;
+  background: rgba(28, 20, 15, 0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(214, 170, 130, 0.2);
+  box-shadow: 0 10px 30px rgba(10, 6, 3, 0.38);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.header-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 2.9rem;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid rgba(251, 146, 60, 0.38);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(249, 115, 22, 0.24), rgba(154, 52, 18, 0.16));
+  color: #fdba74;
+}
+
+.header-copy {
+  min-width: 0;
+}
+
+.header-kicker {
+  display: block;
+  margin-bottom: 0.1rem;
+  color: #fdba74;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+  color: #fff7ed;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.header-copy p {
+  margin: 0.2rem 0 0;
+  color: #c4b5a5;
+  font-size: 0.8rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e7d8c8;
+  font-size: 0.82rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.header-status-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.14), 0 0 12px rgba(74, 222, 128, 0.45);
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.reset-btn,
+.run-btn,
+.router button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.reset-btn:hover,
+.run-btn:hover,
+.router button:hover {
+  transform: translateY(-1px);
+}
+
+.header .reset-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.7rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(255, 237, 213, 0.16);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f97316, #c2410c);
+  color: #fff7ed;
+  font-size: 0.82rem;
+  font-weight: 750;
+  white-space: nowrap;
+  box-shadow: 0 7px 18px rgba(194, 65, 12, 0.22);
+}
+
+.header .reset-btn:hover {
+  box-shadow: 0 9px 22px rgba(194, 65, 12, 0.34);
+}
+
+.header .reset-btn:focus-visible {
+  outline: 2px solid #fdba74;
+  outline-offset: 3px;
+}
+
+.reset-btn:not(.header .reset-btn) {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 12px 26px rgba(249, 115, 22, 0.32);
+}
+
+main {
+  padding: 2rem 2.4rem 3rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(37, 27, 19, 0.88);
+  border: 1px solid rgba(214, 170, 130, 0.15);
+  box-shadow: 0 10px 24px rgba(10, 6, 3, 0.25);
+}
+
+.stat-card svg {
+  width: 2rem;
+  height: 2rem;
+  color: #fdba74;
+}
+
+.stat-card span {
+  display: block;
+  color: #c4b5a5;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: #f8fafc;
+}
+
+.stat-card.danger {
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.stat-card.danger svg,
+.stat-card.danger strong {
+  color: #fca5a5;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.panel {
+  background: rgba(37, 27, 19, 0.88);
+  border: 1px solid rgba(214, 170, 130, 0.14);
+  border-radius: 20px;
+  padding: 1.3rem 1.2rem 1.2rem;
+  box-shadow: 0 18px 30px rgba(10, 6, 3, 0.3);
+}
+
+.panel h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.routers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.router {
+  padding: 1rem 0.9rem;
+  border-radius: 16px;
+  background: rgba(35, 25, 18, 0.8);
+  border: 1px solid rgba(214, 170, 130, 0.18);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.router.active {
+  border-left: 4px solid #f59e0b;
+}
+
+.router.failed {
+  border-left: 4px solid #f87171;
+  opacity: 0.82;
+}
+
+.router:hover {
+  transform: translateY(-1px);
+}
+
+.router-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 0.5rem;
+  background: rgba(249, 115, 22, 0.12);
+  color: #fdba74;
+  margin-bottom: 0.6rem;
+}
+
+.router strong {
+  display: block;
+  font-size: 1.14rem;
+  color: #f8fafc;
+}
+
+.router span {
+  display: block;
+  margin: 0.45rem 0 0.8rem;
+  color: #fbbf24;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.router button {
+  width: 100%;
+  color: white;
+  background: linear-gradient(135deg, #6b4a32, #84532f);
+  font-weight: 700;
+}
+
+.router.failed button {
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+}
+
+.controls {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.controls label {
+  display: block;
+  color: #e0cbb6;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.controls select {
+  width: 100%;
+  margin-top: 0.45rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(214, 170, 130, 0.22);
+  background: rgba(29, 21, 15, 0.95);
+  color: #f8fafc;
+  outline: none;
+}
+
+.run-btn {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.28);
+}
+
+.result {
+  margin-top: 1.2rem;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(154, 52, 18, 0.26), rgba(29, 21, 15, 0.86));
+  border: 1px solid rgba(251, 146, 60, 0.38);
+}
+
+.result h3 {
+  margin: 0 0 0.7rem;
+  color: #f8fafc;
+}
+
+.path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.85rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(17, 11, 7, 0.58);
+  font-weight: 700;
+  color: #e7d8c8;
+}
+
+.path span {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(251, 146, 60, 0.4);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+.path b {
+  color: #fdba74;
+  margin: 0 0.15rem;
+}
+
+.result p {
+  margin-top: 0.9rem;
+  color: #e0cbb6;
+}
+
+.result strong {
+  color: #f8fafc;
+}
+
+.loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #e7d8c8;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #120e0b, #241a14);
+}
+
+.graph-panel {
+  margin-bottom: 1.5rem;
+}
+
+.network-graph {
+  height: 500px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(35, 25, 18, 0.96), rgba(18, 13, 9, 0.98));
+  border: 1px solid rgba(214, 170, 130, 0.18);
+}
+
+.react-flow__background {
+  background: rgba(12, 8, 5, 0.25);
+}
+
+.react-flow__controls button {
+  background: rgba(28, 20, 15, 0.96);
+  color: white;
+  border-bottom: 1px solid rgba(214, 170, 130, 0.2);
+}
+
+.react-flow__minimap {
+  background: rgba(35, 25, 18, 0.9);
+  border: 1px solid rgba(214, 170, 130, 0.2);
+}
+
+@media (max-width: 900px) {
+  .stats,
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .header {
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .header-brand {
+    gap: 0.65rem;
+  }
+
+  .header-mark {
+    flex-basis: 2.55rem;
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+
+  .header-kicker {
+    font-size: 0.58rem;
+  }
+
+  .header h1 {
+    font-size: 1.1rem;
+  }
+
+  .header-copy p {
+    font-size: 0.72rem;
+  }
+
+  .header-actions {
+    gap: 0.6rem;
+  }
+
+  .header-status {
+    font-size: 0;
+  }
+
+  .header-status-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+  }
+
+  .header .reset-btn {
+    min-height: 2.5rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.76rem;
+  }
+
+  main {
+    padding: 1.1rem 1rem 2rem;
+  }
+
+  .stats,
+  .dashboard,
+  .routers {
+    grid-template-columns: 1fr;
+  }
+
+  .network-graph {
+    height: 420px;
+  }
+}
