@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
+from pathlib import Path
 
 from models.graph import Graph
 from algorithms.bfs import bfs
@@ -18,7 +19,8 @@ CORS(app)
 def create_graph():
     graph = Graph()
 
-    with open("data/sample_network.json") as file:
+    data_path = Path(__file__).resolve().parent / "data" / "sample_network.json"
+    with data_path.open() as file:
         data = json.load(file)
 
     for router in data["routers"]:

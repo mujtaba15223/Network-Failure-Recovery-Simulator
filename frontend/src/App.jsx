@@ -12,7 +12,7 @@ import {
 import NetworkGraph from "./components/NetworkGraph";
 import "./App.css";
 
-const API = "http://localhost:5000";
+const API = "";
 
 function App() {
   const [network, setNetwork] = useState(null);
